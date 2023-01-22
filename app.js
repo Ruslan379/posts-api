@@ -1,8 +1,6 @@
 const express = require("express");
-const { router } = require("./router/router");
+const {router} = require("./router/router");
 const app = express();
-
-
 
 //! Middleware - Парсер JSON
 app.use(express.json());
@@ -14,17 +12,13 @@ app.use(express.json());
 // });
 
 // app.use("/", (req, res, next) => {
-//     console.log("Hello, Middleware-2");
-//     next()
+// 	console.log("Hello, Middleware-2");
+// 	next();
 // });
 
 //!!!!! ===== ГЛАВНЫЙ ОБРАБОТЧИК ВСЕХ ЗАПРОСОВ  =====
-app.use("/", router)
-
-
-
-
+app.use("/", router);
 
 module.exports = {
-    app
+	app,
 };
